@@ -1,0 +1,285 @@
+body {
+  font-family: 'Roboto Mono', Consolas, 'Courier New', Courier, Monaco, monospace;
+  /*font-family: Avenir /, "Open Sans" , "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" , "Meiryo UI" , "メイリオ" , Meiryo , "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;*/
+  /*color: white;*/
+  /*background-color: #090909;*/
+}
+section {
+  min-width:1200px;
+}
+table {
+  background: #f7f7f7;
+}
+
+th {
+  text-align: center;
+  border-right:  1px solid #e7e7e7;
+  border-bottom: 1px solid #bbb;
+}
+td {
+  text-align: right;
+  border-right:  1px solid #e7e7e7;
+  border-bottom: 1px solid #ddd;
+}
+.unit-img {
+  /*width: 237px;*/
+  width: 262px;
+  height: 90px;
+  /*height: 82px;*/
+  margin-right: 10px;
+  border: 2px solid #636663;
+  background-color: #f7f7f7;
+  overflow: hidden;
+}
+.unit-img img {
+  transition: 0.5s;
+}
+.unit-img img:hover {
+  -moz-transform: scale(1.5);
+  -webkit-transform: scale(1.5);
+  -o-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  transform: rotate(1.5);
+  /*拡大比率を設定*/
+}
+.ability {
+  float: left;
+  /*margin-right: 80px;*/
+  margin-bottom: 10px;
+  margin-top: 2px;
+}
+.ability + .ability {
+  margin-left: 23px;
+}
+.ability-title {
+  text-align: left;
+  width:60px;
+}
+.ability-cell {
+  width:52px;
+  text-align: right;
+}
+.weapon-name {
+  width:117px;
+  vertical-align: bottom;
+  text-align: left;
+}
+.p-cell {
+  width:28px;
+}
+.p-cell-short {
+  width:21px;
+}
+.not-weapon {
+  color: #ccc;
+}
+
+
+.panel {
+  margin-bottom: 0px
+}
+.panel-title a, .panel-title a:link, .panel-title a:visited, .panel-title a:active, .panel-title a:hover {
+  text-decoration: none;
+}
+
+/* ゴシック体 */
+.sans-serif {
+  font-family:Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" , "Meiryo UI" , "メイリオ" , Meiryo , "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;
+}
+/* 明朝体 */
+.serif {
+  font-family:"Roboto Slab" , Garamond , "Times New Roman" , "游明朝" , "Yu Mincho" , "游明朝体" , "YuMincho" , "ヒラギノ明朝 Pro W3" , "Hiragino Mincho Pro" , "HiraMinProN-W3" , "HGS明朝E" , "ＭＳ Ｐ明朝" , "MS PMincho" , serif;
+}
+/* 等幅 */
+.monospace {
+  font-family:'Roboto Mono', Consolas, 'Courier New', Courier, Monaco, monospace;
+}
+p.right {
+  text-align: right;;
+}
+/* ユニット全体を囲む領域 */
+.unit {
+  display: table;
+  font-family: 'Roboto Mono', Consolas, 'Courier New', Courier, Monaco, monospace;
+  overflow: hidden;
+}
+/* 左側のユニット（改良先ではない方） */
+.unit-main {
+  display: table-cell;
+  width: 442px;
+  padding: 0px 10px;
+  height: 100%;
+  vertical-align: top;
+}
+.unit-main-long {
+  display: table-cell;
+  width: 502px;
+  padding: 0px 10px;
+  height: 100%;
+  vertical-align: top;
+}
+.panel-width {
+  width: 422px;
+}
+.panel-heading-width {
+  width: 421px;
+}
+.panel-width-l2 {
+  width: 452px;
+}
+.panel-heading-width-l2 {
+  width: 451px;
+}
+.float-left {
+  float: left;
+}
+/* 改良下矢印 */
+.arrow-imp {
+  text-align: center;
+  padding: 10px;
+}
+.arrow-imp-right {
+  line-height: 1.6em;
+  text-align: right;
+  float: none;
+  padding: 10px;
+}
+.arrow-imp-right-bottom {
+  line-height: 1.6em;
+  text-align: right;
+  float: right;
+  /*float: none;*/
+  padding: 10px;
+  width: 300px;
+  /*display:inline;*/
+  /*white-space: nowrap;*/
+}
+
+/* 改良先への右矢印記号（→） */
+.unit-separate {
+  display: table-cell;
+  padding: 10px 10px;
+  text-align: center;
+}
+/* 改良先のユニット */
+.unit-improvement {
+  display: table-cell;
+  width: 422px;
+  padding: 0px 0px;
+  vertical-align: top;
+}
+
+/* ユニット名 */
+.unit-name {
+  width: 200px;
+  text-align: left;
+  float: left;
+}
+/* エントリー日付 */
+.unit-update {
+  text-align: center;
+}
+/* 進化 */
+.evolution {
+  text-align: center;
+  padding: 10px;
+}
+/* 注記 */
+.info-warning {
+  color: #66001B;
+}
+.info-ban {
+  color: #4D0014;
+}
+.info-level1 {
+  color: #334166;
+}
+.info-level2 {
+  color: #4D0014;
+}
+/* 搭載 */
+.acc-cell {
+  width: 55px;
+  text-align: center;
+}
+.acc-cell img {
+  transition: 0.5s;
+}
+.acc-cell img:hover {
+  -moz-transform: scale(1.6);
+  -webkit-transform: scale(1.6);
+  -o-transform: scale(1.6);
+  -ms-transform: scale(1.6);
+  transform: rotate(1.6);
+  /*拡大比率を設定*/
+}
+/* 性能表の背景色 */
+.panel-collapse-bgcolor {
+  background-color: #fff;
+}
+/* 注釈エリアの背景色 */
+.panel-bgcolor {
+  background-color: #F7F7F7;
+}
+/* 兵器なし表記 */
+.nothing-weapon {
+  background-color: #4a4d4a;
+  color: #dfe6df;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+/* レベルごとの色設定 */
+.level0 {
+  background-color: #dfe6df;
+}
+.level1 {
+  background-color: #c6ccc6;
+}
+.level2 {
+  background-color: #adb3ad;
+}
+.level3 {
+  background-color: #949994;
+}
+.level4 {
+  background-color: #7c807c;
+}
+.level5 {
+  background-color: #636663;
+}
+.level6 {
+  background-color: #4a4d4a;
+}
+.level6 > h4 {
+  color: #949994;
+}
+.level7 {
+  background-color: #313331;
+}
+.level7 > h4 {
+  color: #7c807c;
+}
+/*.level8 {
+  background-color: #191a19;
+}
+.level8 > h4 {
+  color: #636663;
+}*/
+/* 兵器タイプ */
+.weapon-tyoe {
+  font-family: 'Roboto Mono', Consolas, 'Courier New', Courier, Monaco, monospace;
+  width: 20px;
+}
+/* ユニットタイプ */
+.unit-type {
+  font-family: 'Roboto Mono', Consolas, 'Courier New', Courier, Monaco, monospace;
+  display: inline-block;
+  width: 29px;
+  padding: 4px 0px;
+}
+/* タイトル用 ユニットタイプ */
+.unit-type-cap {
+  font-family: 'Roboto Mono', Consolas, 'Courier New', Courier, Monaco, monospace;
+  display: inline-block;
+  width: 38px;
+}
