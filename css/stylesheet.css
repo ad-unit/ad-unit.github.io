@@ -1,8 +1,6 @@
 body {
   font-family: 'Roboto Mono', Consolas, 'Courier New', Courier, Monaco, monospace;
   /*font-family: Avenir /, "Open Sans" , "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" , "Meiryo UI" , "メイリオ" , Meiryo , "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;*/
-  /*color: white;*/
-  /*background-color: #090909;*/
 }
 section {
   min-width:1200px;
@@ -22,10 +20,8 @@ td {
   border-bottom: 1px solid #ddd;
 }
 .unit-img {
-  /*width: 237px;*/
   width: 262px;
   height: 90px;
-  /*height: 82px;*/
   margin-right: 10px;
   border: 2px solid #636663;
   background-color: #f7f7f7;
@@ -44,7 +40,6 @@ td {
 }
 .ability {
   float: left;
-  /*margin-right: 80px;*/
   margin-bottom: 10px;
   margin-top: 2px;
 }
@@ -53,10 +48,10 @@ td {
 }
 .ability-title {
   text-align: left;
-  width:60px;
+  width:52px;
 }
 .ability-cell {
-  width:52px;
+  width:60px;
   text-align: right;
 }
 .weapon-name {
@@ -95,7 +90,7 @@ td {
   font-family:'Roboto Mono', Consolas, 'Courier New', Courier, Monaco, monospace;
 }
 p.right {
-  text-align: right;;
+  text-align: right;
 }
 /* ユニット全体を囲む領域 */
 .unit {
@@ -148,11 +143,8 @@ p.right {
   line-height: 1.6em;
   text-align: right;
   float: right;
-  /*float: none;*/
   padding: 10px;
   width: 300px;
-  /*display:inline;*/
-  /*white-space: nowrap;*/
 }
 
 /* 改良先への右矢印記号（→） */
