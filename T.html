@@ -186,7 +186,24 @@
 
           <!-- T  輸送車 -->
           <section id="T">
-            <h3><span class="unit-type-cap">T</span>輸送車</h3>
+            <div class="weapon-tyoe-title-box">
+              <div class="weapon-tyoe-title">
+                <h3><span class="unit-type-cap">T</span>輸送車</h3>
+              </div>
+              <div class="perform-toggle-button">
+                <div class="perf-text">性能表</div>
+                <div id="performShowT" class="on-text">
+                  ON
+                  <div class="on-text-light off-light-color">
+                  </div>
+                </div>
+                <div id="performHideT" class="off-text">
+                  OFF
+                  <div class="off-text-light on-light-color">
+                  </div>
+                </div>
+              </div>
+            </div>
             <p>開発表&nbsp;枠数&nbsp;3</p>
 
             <div class="unit">
@@ -1022,7 +1039,24 @@
 
           <!-- TH 補給車 -->
           <section id="TH">
-            <h3><span class="unit-type-cap">TH</span>補給車</h3>
+            <div class="weapon-tyoe-title-box">
+              <div class="weapon-tyoe-title">
+                <h3><span class="unit-type-cap">TH</span>補給車</h3>
+              </div>
+              <div class="perform-toggle-button">
+                <div class="perf-text">性能表</div>
+                <div id="performShowTH" class="on-text">
+                  ON
+                  <div class="on-text-light off-light-color">
+                  </div>
+                </div>
+                <div id="performHideTH" class="off-text">
+                  OFF
+                  <div class="off-text-light on-light-color">
+                  </div>
+                </div>
+              </div>
+            </div>
             <p>開発表&nbsp;枠数&nbsp;3</p>
 
             <div class="unit">
@@ -1430,7 +1464,24 @@
 
           <!-- TK 工作車 -->
           <section id="TK">
-            <h3><span class="unit-type-cap">TK</span>工作車</h3>
+            <div class="weapon-tyoe-title-box">
+              <div class="weapon-tyoe-title">
+                <h3><span class="unit-type-cap">TK</span>工作車</h3>
+              </div>
+              <div class="perform-toggle-button">
+                <div class="perf-text">性能表</div>
+                <div id="performShowTK" class="on-text">
+                  ON
+                  <div class="on-text-light off-light-color">
+                  </div>
+                </div>
+                <div id="performHideTK" class="off-text">
+                  OFF
+                  <div class="off-text-light on-light-color">
+                  </div>
+                </div>
+              </div>
+            </div>
             <p>開発表&nbsp;枠数&nbsp;1</p>
 
             <div class="unit">
@@ -1566,7 +1617,24 @@
 
           <!-- E  列車 -->
           <section id="E">
-            <h3><span class="unit-type-cap">E</span>列車</h3>
+            <div class="weapon-tyoe-title-box">
+              <div class="weapon-tyoe-title">
+                <h3><span class="unit-type-cap">E</span>列車</h3>
+              </div>
+              <div class="perform-toggle-button">
+                <div class="perf-text">性能表</div>
+                <div id="performShowE" class="on-text">
+                  ON
+                  <div class="on-text-light off-light-color">
+                  </div>
+                </div>
+                <div id="performHideE" class="off-text">
+                  OFF
+                  <div class="off-text-light on-light-color">
+                  </div>
+                </div>
+              </div>
+            </div>
             <p>開発表&nbsp;枠数&nbsp;1</p>
 
             <div class="unit">
@@ -1726,28 +1794,108 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <script>
-    (function($) {
-      'use strict';
-      // Collapseイベント
-      $('.panel-collapse').on({
-        // 折り畳み開く処理
-        'show.bs.collapse': function() {
-          $('a[href="#' + this.id + '"] span.glyphicon-chevron-down')
-            .removeClass('glyphicon-chevron-down')
-            .addClass('glyphicon-chevron-up');
-        },
-        // 折り畳み閉じる処理
-        'hide.bs.collapse': function() {
-          $('a[href="#' + this.id + '"] span.glyphicon-chevron-up')
-            .removeClass('glyphicon-chevron-up')
-            .addClass('glyphicon-chevron-down');
-        }
+      (function($) {
+        'use strict';
+        // Collapseイベント
+        $('.panel-collapse').on({
+          // 折り畳み開く処理
+          'show.bs.collapse': function() {
+            $('a[href="#' + this.id + '"] span.glyphicon-chevron-down')
+              .removeClass('glyphicon-chevron-down')
+              .addClass('glyphicon-chevron-up');
+          },
+          // 折り畳み閉じる処理
+          'hide.bs.collapse': function() {
+            $('a[href="#' + this.id + '"] span.glyphicon-chevron-up')
+              .removeClass('glyphicon-chevron-up')
+              .addClass('glyphicon-chevron-down');
+          }
+        });
+        // ハッシュリンクキャンセル
+        $('a[href="#menuOne"], a[href="#menuTwo"]').on('click', function(event) {
+          event.preventDefault();
+        });
+      })(jQuery);
+
+      $(function() {
+        'use strict';
+        // T	輸送車
+        // ONボタン押下
+        $('#performShowT').click(function() {
+          $('#Track').collapse('show');
+          $('#Sdkfz7').collapse('show');
+          $('#Sdkfz251').collapse('show');
+          $('#performShowT > div').removeClass('off-light-color');
+          $('#performShowT > div').addClass('on-light-color');
+          $('#performHideT > div').removeClass('on-light-color');
+          $('#performHideT > div').addClass('off-light-color');
+        });
+        // OFFボタン押下
+        $('#performHideT').click(function() {
+          $('#Track').collapse('hide');
+          $('#Sdkfz7').collapse('hide');
+          $('#Sdkfz251').collapse('hide');
+          $('#performShowT > div').removeClass('on-light-color');
+          $('#performShowT > div').addClass('off-light-color');
+          $('#performHideT > div').removeClass('off-light-color');
+          $('#performHideT > div').addClass('on-light-color');
+        });
+        // TH	補給車
+        // ONボタン押下
+        $('#performShowTH').click(function() {
+          $('#SupplyHorse').collapse('show');
+          $('#SupplyTrack').collapse('show');
+          $('#Supplyht').collapse('show');
+          $('#performShowTH > div').removeClass('off-light-color');
+          $('#performShowTH > div').addClass('on-light-color');
+          $('#performHideTH > div').removeClass('on-light-color');
+          $('#performHideTH > div').addClass('off-light-color');
+        });
+        // OFFボタン押下
+        $('#performHideTH').click(function() {
+          $('#SupplyHorse').collapse('hide');
+          $('#SupplyTrack').collapse('hide');
+          $('#Supplyht').collapse('hide');
+          $('#performShowTH > div').removeClass('on-light-color');
+          $('#performShowTH > div').addClass('off-light-color');
+          $('#performHideTH > div').removeClass('off-light-color');
+          $('#performHideTH > div').addClass('on-light-color');
+        });
+        // TK	工作車
+        // ONボタン押下
+        $('#performShowTK').click(function() {
+          $('#MachineTool').collapse('show');
+          $('#performShowTK > div').removeClass('off-light-color');
+          $('#performShowTK > div').addClass('on-light-color');
+          $('#performHideTK > div').removeClass('on-light-color');
+          $('#performHideTK > div').addClass('off-light-color');
+        });
+        // OFFボタン押下
+        $('#performHideTK').click(function() {
+          $('#MachineTool').collapse('hide');
+          $('#performShowTK > div').removeClass('on-light-color');
+          $('#performShowTK > div').addClass('off-light-color');
+          $('#performHideTK > div').removeClass('off-light-color');
+          $('#performHideTK > div').addClass('on-light-color');
+        });
+        // E	列車
+        // ONボタン押下
+        $('#performShowE').click(function() {
+          $('#Train').collapse('show');
+          $('#performShowE > div').removeClass('off-light-color');
+          $('#performShowE > div').addClass('on-light-color');
+          $('#performHideE > div').removeClass('on-light-color');
+          $('#performHideE > div').addClass('off-light-color');
+        });
+        // OFFボタン押下
+        $('#performHideE').click(function() {
+          $('#Train').collapse('hide');
+          $('#performShowE > div').removeClass('on-light-color');
+          $('#performShowE > div').addClass('off-light-color');
+          $('#performHideE > div').removeClass('off-light-color');
+          $('#performHideE > div').addClass('on-light-color');
+        });
       });
-      // ハッシュリンクキャンセル
-      $('a[href="#menuOne"], a[href="#menuTwo"]').on('click', function(event) {
-        event.preventDefault();
-      });
-    })(jQuery);
     </script>
 
   </body>

@@ -185,7 +185,24 @@
 
           <!-- UG 自走重歩兵砲 -->
           <section id="UG">
-            <h3><span class="unit-type-cap">UG</span>自走重歩兵砲</h3>
+            <div class="weapon-tyoe-title-box">
+              <div class="weapon-tyoe-title">
+                <h3><span class="unit-type-cap">UG</span>自走重歩兵砲</h3>
+              </div>
+              <div class="perform-toggle-button">
+                <div class="perf-text">性能表</div>
+                <div id="performShowUG" class="on-text">
+                  ON
+                  <div class="on-text-light off-light-color">
+                  </div>
+                </div>
+                <div id="performHideUG" class="off-text">
+                  OFF
+                  <div class="off-text-light on-light-color">
+                  </div>
+                </div>
+              </div>
+            </div>
             <p>開発表&nbsp;枠数&nbsp;3</p>
 
             <div class="unit">
@@ -195,7 +212,7 @@
                 <div class="panel panel-default panel-bgcolor">
                   <div class="panel-heading">
                     <h4 class="panel-title">
-                      <a data-toggle="collapse" href="#sIGIB_i1">
+                      <a data-toggle="collapse" href="#sIGIB">
                         <div class="unit-name">
                           sIGIB
                         </div>
@@ -206,7 +223,7 @@
                       </a>
                     </h4>
                   </div>
-                  <div id="sIGIB_i1" class="panel-collapse collapse panel-collapse-bgcolor">
+                  <div id="sIGIB" class="panel-collapse collapse panel-collapse-bgcolor">
                     <div class="panel-body">
                       <div class="float-left unit-img">
                         <img src="./image/sIGIB.png" width="260" height="88" alt="sIGIB">
@@ -720,7 +737,7 @@
                 <div class="panel panel-default panel-bgcolor">
                   <div class="panel-heading">
                     <h4 class="panel-title">
-                      <a data-toggle="collapse" href="#sIG33Bi1">
+                      <a data-toggle="collapse" href="#sIG33B">
                         <div class="unit-name">
                           sIG33B
                         </div>
@@ -731,7 +748,7 @@
                       </a>
                     </h4>
                   </div>
-                  <div id="sIG33Bi1" class="panel-collapse collapse panel-collapse-bgcolor">
+                  <div id="sIG33B" class="panel-collapse collapse panel-collapse-bgcolor">
                     <div class="panel-body">
 
                       <div class="float-left unit-img">
@@ -1253,7 +1270,24 @@
 
           <!-- U  自走カノン砲 -->
           <section id="U">
-            <h3><span class="unit-type-cap">U</span>自走カノン砲</h3>
+            <div class="weapon-tyoe-title-box">
+              <div class="weapon-tyoe-title">
+                <h3><span class="unit-type-cap">U</span>自走カノン砲</h3>
+              </div>
+              <div class="perform-toggle-button">
+                <div class="perf-text">性能表</div>
+                <div id="performShowU" class="on-text">
+                  ON
+                  <div class="on-text-light off-light-color">
+                  </div>
+                </div>
+                <div id="performHideU" class="off-text">
+                  OFF
+                  <div class="off-text-light on-light-color">
+                  </div>
+                </div>
+              </div>
+            </div>
             <p>開発表&nbsp;枠数&nbsp;3</p>
 
 
@@ -1803,7 +1837,24 @@
 
           <!-- UR 自走ロケット -->
           <section id="UR">
-            <h3><span class="unit-type-cap">UR</span>自走ロケット</h3>
+            <div class="weapon-tyoe-title-box">
+              <div class="weapon-tyoe-title">
+                <h3><span class="unit-type-cap">UR</span>自走ロケット</h3>
+              </div>
+              <div class="perform-toggle-button">
+                <div class="perf-text">性能表</div>
+                <div id="performShowUR" class="on-text">
+                  ON
+                  <div class="on-text-light off-light-color">
+                  </div>
+                </div>
+                <div id="performHideUR" class="off-text">
+                  OFF
+                  <div class="off-text-light on-light-color">
+                  </div>
+                </div>
+              </div>
+            </div>
             <p>開発表&nbsp;枠数&nbsp;1</p>
 
             <div class="unit">
@@ -2100,28 +2151,106 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <script>
-    (function($) {
-      'use strict';
-      // Collapseイベント
-      $('.panel-collapse').on({
-        // 折り畳み開く処理
-        'show.bs.collapse': function() {
-          $('a[href="#' + this.id + '"] span.glyphicon-chevron-down')
-            .removeClass('glyphicon-chevron-down')
-            .addClass('glyphicon-chevron-up');
-        },
-        // 折り畳み閉じる処理
-        'hide.bs.collapse': function() {
-          $('a[href="#' + this.id + '"] span.glyphicon-chevron-up')
-            .removeClass('glyphicon-chevron-up')
-            .addClass('glyphicon-chevron-down');
-        }
+      (function($) {
+        'use strict';
+        // Collapseイベント
+        $('.panel-collapse').on({
+          // 折り畳み開く処理
+          'show.bs.collapse': function() {
+            $('a[href="#' + this.id + '"] span.glyphicon-chevron-down')
+              .removeClass('glyphicon-chevron-down')
+              .addClass('glyphicon-chevron-up');
+          },
+          // 折り畳み閉じる処理
+          'hide.bs.collapse': function() {
+            $('a[href="#' + this.id + '"] span.glyphicon-chevron-up')
+              .removeClass('glyphicon-chevron-up')
+              .addClass('glyphicon-chevron-down');
+          }
+        });
+        // ハッシュリンクキャンセル
+        $('a[href="#menuOne"], a[href="#menuTwo"]').on('click', function(event) {
+          event.preventDefault();
+        });
+      })(jQuery);
+
+      $(function() {
+        'use strict';
+        // UG	自走重歩兵砲
+        // ONボタン押下
+        $('#performShowUG').click(function() {
+          $('#sIGIB').collapse('show');
+          $('#sIGII').collapse('show');
+          $('#GreileH').collapse('show');
+          $('#GreileK').collapse('show');
+          $('#sIG33B').collapse('show');
+          $('#sIG332').collapse('show');
+          $('#Bloomberg').collapse('show');
+          $('#STigger').collapse('show');
+          $('#performShowUG > div').removeClass('off-light-color');
+          $('#performShowUG > div').addClass('on-light-color');
+          $('#performHideUG > div').removeClass('on-light-color');
+          $('#performHideUG > div').addClass('off-light-color');
+        });
+        // OFFボタン押下
+        $('#performHideUG').click(function() {
+          $('#sIGIB').collapse('hide');
+          $('#sIGII').collapse('hide');
+          $('#GreileH').collapse('hide');
+          $('#GreileK').collapse('hide');
+          $('#sIG33B').collapse('hide');
+          $('#sIG332').collapse('hide');
+          $('#Bloomberg').collapse('hide');
+          $('#STigger').collapse('hide');
+          $('#performShowUG > div').removeClass('on-light-color');
+          $('#performShowUG > div').addClass('off-light-color');
+          $('#performHideUG > div').removeClass('off-light-color');
+          $('#performHideUG > div').addClass('on-light-color');
+        });
+        // U	自走カノン砲
+        // ONボタン押下
+        $('#performShowU').click(function() {
+          $('#Vespe').collapse('show');
+          $('#Hummel').collapse('show');
+          $('#Gerat809').collapse('show');
+          $('#Gerat811').collapse('show');
+          $('#performShowU > div').removeClass('off-light-color');
+          $('#performShowU > div').addClass('on-light-color');
+          $('#performHideU > div').removeClass('on-light-color');
+          $('#performHideU > div').addClass('off-light-color');
+        });
+        // OFFボタン押下
+        $('#performHideU').click(function() {
+          $('#Vespe').collapse('hide');
+          $('#Hummel').collapse('hide');
+          $('#Gerat809').collapse('hide');
+          $('#Gerat811').collapse('hide');
+          $('#performShowU > div').removeClass('on-light-color');
+          $('#performShowU > div').addClass('off-light-color');
+          $('#performHideU > div').removeClass('off-light-color');
+          $('#performHideU > div').addClass('on-light-color');
+        });
+        // UR	自走ロケット
+        // ONボタン押下
+        $('#performShowUR').click(function() {
+          $('#SPW251W').collapse('show');
+          $('#Martia').collapse('show');
+          $('#performShowUR > div').removeClass('off-light-color');
+          $('#performShowUR > div').addClass('on-light-color');
+          $('#performHideUR > div').removeClass('on-light-color');
+          $('#performHideUR > div').addClass('off-light-color');
+        });
+        // OFFボタン押下
+        $('#performHideUR').click(function() {
+          $('#SPW251W').collapse('hide');
+          $('#Martia').collapse('hide');
+          $('#performShowUR > div').removeClass('on-light-color');
+          $('#performShowUR > div').addClass('off-light-color');
+          $('#performHideUR > div').removeClass('off-light-color');
+          $('#performHideUR > div').addClass('on-light-color');
+        });
       });
-      // ハッシュリンクキャンセル
-      $('a[href="#menuOne"], a[href="#menuTwo"]').on('click', function(event) {
-        event.preventDefault();
-      });
-    })(jQuery);
+
     </script>
 
   </body>

@@ -183,12 +183,27 @@
         <main class="col-sm-12 col-md-12">
 
 
-
           <!-- A  攻撃機 -->
           <section id="A">
-            <h3><span class="unit-type-cap">A</span>攻撃機</h3>
+            <div class="weapon-tyoe-title-box">
+              <div class="weapon-tyoe-title">
+                <h3><span class="unit-type-cap">A</span>攻撃機</h3>
+              </div>
+              <div class="perform-toggle-button">
+                <div class="perf-text">性能表</div>
+                <div id="performShowA" class="on-text">
+                  ON
+                  <div class="on-text-light off-light-color">
+                  </div>
+                </div>
+                <div id="performHideA" class="off-text">
+                  OFF
+                  <div class="off-text-light on-light-color">
+                  </div>
+                </div>
+              </div>
+            </div>
             <p>開発表&nbsp;枠数&nbsp;2</p>
-
 
             <div class="unit">
               <div class="unit-main level1">
@@ -1115,7 +1130,24 @@
 
           <!-- AC 艦上攻撃機 -->
           <section id="AC">
-            <h3><span class="unit-type-cap">AC</span>艦上攻撃機</h3>
+            <div class="weapon-tyoe-title-box">
+              <div class="weapon-tyoe-title">
+                <h3><span class="unit-type-cap">AC</span>艦上攻撃機</h3>
+              </div>
+              <div class="perform-toggle-button">
+                <div class="perf-text">性能表</div>
+                <div id="performShowAC" class="on-text">
+                  ON
+                  <div class="on-text-light off-light-color">
+                  </div>
+                </div>
+                <div id="performHideAC" class="off-text">
+                  OFF
+                  <div class="off-text-light on-light-color">
+                  </div>
+                </div>
+              </div>
+            </div>
             <p>開発表&nbsp;枠数&nbsp;1</p>
 
             <div class="unit">
@@ -1385,7 +1417,25 @@
 
           <!-- D  急降下爆撃機 -->
           <section id="D">
-            <h3><span class="unit-type-cap">D</span>急降下爆撃機</h3>
+            <div class="weapon-tyoe-title-box">
+              <div class="weapon-tyoe-title">
+                <h3><span class="unit-type-cap">D</span>急降下爆撃機</h3>
+              </div>
+              <div class="perform-toggle-button">
+                <div class="perf-text">性能表</div>
+                <div id="performShowD" class="on-text">
+                  ON
+                  <div class="on-text-light off-light-color">
+                  </div>
+                </div>
+                <div id="performHideD" class="off-text">
+                  OFF
+                  <div class="off-text-light on-light-color">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- <h3><span class="unit-type-cap">D</span>急降下爆撃機</h3> -->
             <p>開発表&nbsp;枠数&nbsp;2</p>
 
             <div class="unit">
@@ -2198,7 +2248,24 @@
 
           <!-- H  ヘリコプター -->
           <section id="H">
-            <h3><span class="unit-type-cap">H</span>ヘリコプター</h3>
+            <div class="weapon-tyoe-title-box">
+              <div class="weapon-tyoe-title">
+                <h3><span class="unit-type-cap">H</span>ヘリコプター</h3>
+              </div>
+              <div class="perform-toggle-button">
+                <div class="perf-text">性能表</div>
+                <div id="performShowH" class="on-text">
+                  ON
+                  <div class="on-text-light off-light-color">
+                  </div>
+                </div>
+                <div id="performHideH" class="off-text">
+                  OFF
+                  <div class="off-text-light on-light-color">
+                  </div>
+                </div>
+              </div>
+            </div>
             <p>開発表&nbsp;枠数&nbsp;2</p>
 
             <div class="unit">
@@ -2500,28 +2567,125 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <script>
-    (function($) {
-      'use strict';
-      // Collapseイベント
-      $('.panel-collapse').on({
-        // 折り畳み開く処理
-        'show.bs.collapse': function() {
-          $('a[href="#' + this.id + '"] span.glyphicon-chevron-down')
-            .removeClass('glyphicon-chevron-down')
-            .addClass('glyphicon-chevron-up');
-        },
-        // 折り畳み閉じる処理
-        'hide.bs.collapse': function() {
-          $('a[href="#' + this.id + '"] span.glyphicon-chevron-up')
-            .removeClass('glyphicon-chevron-up')
-            .addClass('glyphicon-chevron-down');
-        }
+      (function($) {
+        'use strict';
+        // Collapseイベント
+        $('.panel-collapse').on({
+          // 折り畳み開く処理
+          'show.bs.collapse': function() {
+            $('a[href="#' + this.id + '"] span.glyphicon-chevron-down')
+              .removeClass('glyphicon-chevron-down')
+              .addClass('glyphicon-chevron-up');
+          },
+          // 折り畳み閉じる処理
+          'hide.bs.collapse': function() {
+            $('a[href="#' + this.id + '"] span.glyphicon-chevron-up')
+              .removeClass('glyphicon-chevron-up')
+              .addClass('glyphicon-chevron-down');
+          }
+        });
+        // ハッシュリンクキャンセル
+        $('a[href="#menuOne"], a[href="#menuTwo"]').on('click', function(event) {
+          event.preventDefault();
+        });
+      })(jQuery);
+
+      $(function() {
+        // A	攻撃機
+        // ONボタン押下
+        $('#performShowA').click(function() {
+          $('#Hs123').collapse('show');
+          $('#Hs129B1').collapse('show');
+          $('#Hs129B2').collapse('show');
+          $('#Ar234B').collapse('show');
+          $('#Ar234C').collapse('show');
+          $('#Ar234D').collapse('show');
+          $('#Ar234E').collapse('show');
+          $('#performShowA > div').removeClass('off-light-color');
+          $('#performShowA > div').addClass('on-light-color');
+          $('#performHideA > div').removeClass('on-light-color');
+          $('#performHideA > div').addClass('off-light-color');
+        });
+        // OFFボタン押下
+        $('#performHideA').click(function() {
+          $('#Hs123').collapse('hide');
+          $('#Hs129B1').collapse('hide');
+          $('#Hs129B2').collapse('hide');
+          $('#Ar234B').collapse('hide');
+          $('#Ar234C').collapse('hide');
+          $('#Ar234D').collapse('hide');
+          $('#Ar234E').collapse('hide');
+          $('#performShowA > div').removeClass('on-light-color');
+          $('#performShowA > div').addClass('off-light-color');
+          $('#performHideA > div').removeClass('off-light-color');
+          $('#performHideA > div').addClass('on-light-color');
+        });
+
+        // AC	艦上攻撃機
+        // ONボタン押下
+        $('#performShowAC').click(function() {
+          $('#Ju87C').collapse('show');
+          $('#performShowAC > div').removeClass('off-light-color');
+          $('#performShowAC > div').addClass('on-light-color');
+          $('#performHideAC > div').removeClass('on-light-color');
+          $('#performHideAC > div').addClass('off-light-color');
+        });
+        // OFFボタン押下
+        $('#performHideAC').click(function() {
+          $('#Ju87C').collapse('hide');
+          $('#performShowAC > div').removeClass('on-light-color');
+          $('#performShowAC > div').addClass('off-light-color');
+          $('#performHideAC > div').removeClass('off-light-color');
+          $('#performHideAC > div').addClass('on-light-color');
+        });
+
+        // D	急降下爆撃機
+        // ONボタン押下
+        $('#performShowD').click(function() {
+          $('#Ju87B').collapse('show');
+          $('#Ju87R').collapse('show');
+          $('#Ju87D').collapse('show');
+          $('#Ju87G').collapse('show');
+          $('#Hs132A').collapse('show');
+          $('#performShowD > div').removeClass('off-light-color');
+          $('#performShowD > div').addClass('on-light-color');
+          $('#performHideD > div').removeClass('on-light-color');
+          $('#performHideD > div').addClass('off-light-color');
+        });
+        // OFFボタン押下
+        $('#performHideD').click(function() {
+          $('#Ju87B').collapse('hide');
+          $('#Ju87R').collapse('hide');
+          $('#Ju87D').collapse('hide');
+          $('#Ju87G').collapse('hide');
+          $('#Hs132A').collapse('hide');
+          $('#performShowD > div').removeClass('on-light-color');
+          $('#performShowD > div').addClass('off-light-color');
+          $('#performHideD > div').removeClass('off-light-color');
+          $('#performHideD > div').addClass('on-light-color');
+        });
+
+        // H	ヘリコプター
+        // ONボタン押下
+        $('#performShowH').click(function() {
+          $('#Fl282').collapse('show');
+          $('#Fa223').collapse('show');
+          $('#performShowH > div').removeClass('off-light-color');
+          $('#performShowH > div').addClass('on-light-color');
+          $('#performHideH > div').removeClass('on-light-color');
+          $('#performHideH > div').addClass('off-light-color');
+        });
+        // OFFボタン押下
+        $('#performHideH').click(function() {
+          $('#Fl282').collapse('hide');
+          $('#Fa223').collapse('hide');
+          $('#performShowH > div').removeClass('on-light-color');
+          $('#performShowH > div').addClass('off-light-color');
+          $('#performHideH > div').removeClass('off-light-color');
+          $('#performHideH > div').addClass('on-light-color');
+        });
       });
-      // ハッシュリンクキャンセル
-      $('a[href="#menuOne"], a[href="#menuTwo"]').on('click', function(event) {
-        event.preventDefault();
-      });
-    })(jQuery);
+
     </script>
 
   </body>

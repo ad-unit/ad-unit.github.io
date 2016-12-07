@@ -216,8 +216,9 @@ p.right {
 /* 兵器なし表記 */
 .nothing-weapon {
   background-color: #4a4d4a;
-  color: #dfe6df;
+  color: #c6ccc6;
   padding: 4px 8px;
+  border: 1px solid #c6ccc6;
   border-radius: 4px;
 }
 /* レベルごとの色設定 */
@@ -274,4 +275,63 @@ p.right {
   font-family: 'Roboto Mono', Consolas, 'Courier New', Courier, Monaco, monospace;
   display: inline-block;
   width: 38px;
+}
+.weapon-tyoe-title-box {
+  width: 442px;
+  overflow: hidden;
+}
+.weapon-tyoe-title {
+  width: 59%;
+  float: left;
+}
+.perform-toggle-button {
+  background-color: #4a4d4a;
+  color: #c6ccc6;
+  width: 180px;
+  height: 32px;
+  border: 1px solid #c6ccc6;
+  border-radius: 16px;
+  text-align: center;
+  overflow: hidden;
+  margin-top: 20px;
+}
+.perf-text {
+  width: 50%;
+  height: 100%;
+  float: left;
+  padding-top: 5px;
+}
+.on-text {
+  width: 25%;
+  height: 100%;
+  float: left;
+  border-left: 1px solid #949994;
+  cursor: pointer;
+}
+.off-text {
+  width: 25%;
+  height: 100%;
+  float: left;
+  border-left: 1px solid #949994;
+  cursor: pointer;
+}
+.on-text-light {
+  width: 18px;
+  height: 8px;
+  border: 2px solid #636663;
+  border-radius: 4px;
+  margin-left: 30%;
+}
+.off-text-light {
+  width: 18px;
+  height: 8px;
+  border: 2px solid #636663;
+  border-radius: 4px;
+  margin-left: 30%;
+}
+.on-light-color {
+  background-color: #F59300;
+}
+.off-light-color {
+  background-color: #313331;
 }

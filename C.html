@@ -185,7 +185,24 @@
 
           <!-- C  輸送機 -->
           <section id="C">
-            <h3><span class="unit-type-cap">C</span>輸送機</h3>
+            <div class="weapon-tyoe-title-box">
+              <div class="weapon-tyoe-title">
+                <h3><span class="unit-type-cap">C</span>輸送機</h3>
+              </div>
+              <div class="perform-toggle-button">
+                <div class="perf-text">性能表</div>
+                <div id="performShowC" class="on-text">
+                  ON
+                  <div class="on-text-light off-light-color">
+                  </div>
+                </div>
+                <div id="performHideC" class="off-text">
+                  OFF
+                  <div class="off-text-light on-light-color">
+                  </div>
+                </div>
+              </div>
+            </div>
             <p>開発表&nbsp;枠数&nbsp;2</p>
 
             <!-- Level 1 -->
@@ -1046,28 +1063,60 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <script>
-    (function($) {
-      'use strict';
-      // Collapseイベント
-      $('.panel-collapse').on({
-        // 折り畳み開く処理
-        'show.bs.collapse': function() {
-          $('a[href="#' + this.id + '"] span.glyphicon-chevron-down')
-            .removeClass('glyphicon-chevron-down')
-            .addClass('glyphicon-chevron-up');
-        },
-        // 折り畳み閉じる処理
-        'hide.bs.collapse': function() {
-          $('a[href="#' + this.id + '"] span.glyphicon-chevron-up')
-            .removeClass('glyphicon-chevron-up')
-            .addClass('glyphicon-chevron-down');
-        }
+      (function($) {
+        'use strict';
+        // Collapseイベント
+        $('.panel-collapse').on({
+          // 折り畳み開く処理
+          'show.bs.collapse': function() {
+            $('a[href="#' + this.id + '"] span.glyphicon-chevron-down')
+              .removeClass('glyphicon-chevron-down')
+              .addClass('glyphicon-chevron-up');
+          },
+          // 折り畳み閉じる処理
+          'hide.bs.collapse': function() {
+            $('a[href="#' + this.id + '"] span.glyphicon-chevron-up')
+              .removeClass('glyphicon-chevron-up')
+              .addClass('glyphicon-chevron-down');
+          }
+        });
+        // ハッシュリンクキャンセル
+        $('a[href="#menuOne"], a[href="#menuTwo"]').on('click', function(event) {
+          event.preventDefault();
+        });
+      })(jQuery);
+
+      $(function() {
+        'use strict';
+        // C	輸送機
+        // ONボタン押下
+        $('#performShowC').click(function() {
+          $('#Ju52g5e').collapse('show');
+          $('#Ju52g5eF').collapse('show');
+          $('#Ju52g9e').collapse('show');
+          $('#Ar232').collapse('show');
+          $('#Me323D').collapse('show');
+          $('#Me323E').collapse('show');
+          $('#performShowC > div').removeClass('off-light-color');
+          $('#performShowC > div').addClass('on-light-color');
+          $('#performHideC > div').removeClass('on-light-color');
+          $('#performHideC > div').addClass('off-light-color');
+        });
+        // OFFボタン押下
+        $('#performHideC').click(function() {
+          $('#Ju52g5e').collapse('hide');
+          $('#Ju52g5eF').collapse('hide');
+          $('#Ju52g9e').collapse('hide');
+          $('#Ar232').collapse('hide');
+          $('#Me323D').collapse('hide');
+          $('#Me323E').collapse('hide');
+          $('#performShowC > div').removeClass('on-light-color');
+          $('#performShowC > div').addClass('off-light-color');
+          $('#performHideC > div').removeClass('off-light-color');
+          $('#performHideC > div').addClass('on-light-color');
+        });
       });
-      // ハッシュリンクキャンセル
-      $('a[href="#menuOne"], a[href="#menuTwo"]').on('click', function(event) {
-        event.preventDefault();
-      });
-    })(jQuery);
+
     </script>
 
   </body>

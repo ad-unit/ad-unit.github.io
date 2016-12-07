@@ -186,7 +186,24 @@
 
           <!-- B  爆撃機 -->
           <section id="B">
-            <h3><span class="unit-type-cap">B</span>爆撃機</h3>
+            <div class="weapon-tyoe-title-box">
+              <div class="weapon-tyoe-title">
+                <h3><span class="unit-type-cap">B</span>爆撃機</h3>
+              </div>
+              <div class="perform-toggle-button">
+                <div class="perf-text">性能表</div>
+                <div id="performShowB" class="on-text">
+                  ON
+                  <div class="on-text-light off-light-color">
+                  </div>
+                </div>
+                <div id="performHideB" class="off-text">
+                  OFF
+                  <div class="off-text-light on-light-color">
+                  </div>
+                </div>
+              </div>
+            </div>
             <p>開発表&nbsp;枠数&nbsp;3</p>
 
 
@@ -2332,7 +2349,24 @@
 
           <!-- BU 巡行ミサイル -->
           <section id="BU">
-            <h3><span class="unit-type-cap">BU</span>巡航ミサイル</h3>
+            <div class="weapon-tyoe-title-box">
+              <div class="weapon-tyoe-title">
+                <h3><span class="unit-type-cap">BU</span>巡航ミサイル</h3>
+              </div>
+              <div class="perform-toggle-button">
+                <div class="perf-text">性能表</div>
+                <div id="performShowBU" class="on-text">
+                  ON
+                  <div class="on-text-light off-light-color">
+                  </div>
+                </div>
+                <div id="performHideBU" class="off-text">
+                  OFF
+                  <div class="off-text-light on-light-color">
+                  </div>
+                </div>
+              </div>
+            </div>
             <p>開発表&nbsp;枠数&nbsp;1</p>
 
 
@@ -2343,7 +2377,7 @@
                 <div class="panel panel-default">
                   <div class="panel-heading">
                     <h4 class="panel-title">
-                      <a data-toggle="collapse" href="#V-1">
+                      <a data-toggle="collapse" href="#V1">
                         <div class="unit-name">
                           V-1
                         </div>
@@ -2354,7 +2388,7 @@
                       </a>
                     </h4>
                   </div>
-                  <div id="V-1" class="panel-collapse collapse">
+                  <div id="V1" class="panel-collapse collapse">
                     <div class="panel-body">
 
                       <div class="float-left unit-img">
@@ -2472,7 +2506,24 @@
 
           <!-- BR 戦略ミサイル -->
           <section id="BR">
-            <h3><span class="unit-type-cap">BR</span>戦略ミサイル</h3>
+            <div class="weapon-tyoe-title-box">
+              <div class="weapon-tyoe-title">
+                <h3><span class="unit-type-cap">BR</span>戦略ミサイル</h3>
+              </div>
+              <div class="perform-toggle-button">
+                <div class="perf-text">性能表</div>
+                <div id="performShowBR" class="on-text">
+                  ON
+                  <div class="on-text-light off-light-color">
+                  </div>
+                </div>
+                <div id="performHideBR" class="off-text">
+                  OFF
+                  <div class="off-text-light on-light-color">
+                  </div>
+                </div>
+              </div>
+            </div>
             <p>開発表&nbsp;枠数&nbsp;1</p>
 
 
@@ -2483,7 +2534,7 @@
                 <div class="panel panel-default">
                   <div class="panel-heading">
                     <h4 class="panel-title">
-                      <a data-toggle="collapse" href="#V-2">
+                      <a data-toggle="collapse" href="#V2">
                         <div class="unit-name">
                           V-2
                         </div>
@@ -2494,7 +2545,7 @@
                       </a>
                     </h4>
                   </div>
-                  <div id="V-2" class="panel-collapse collapse">
+                  <div id="V2" class="panel-collapse collapse">
                     <div class="panel-body">
 
                       <div class="float-left unit-img">
@@ -2625,28 +2676,114 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <script>
-    (function($) {
-      'use strict';
-      // Collapseイベント
-      $('.panel-collapse').on({
-        // 折り畳み開く処理
-        'show.bs.collapse': function() {
-          $('a[href="#' + this.id + '"] span.glyphicon-chevron-down')
-            .removeClass('glyphicon-chevron-down')
-            .addClass('glyphicon-chevron-up');
-        },
-        // 折り畳み閉じる処理
-        'hide.bs.collapse': function() {
-          $('a[href="#' + this.id + '"] span.glyphicon-chevron-up')
-            .removeClass('glyphicon-chevron-up')
-            .addClass('glyphicon-chevron-down');
-        }
+      (function($) {
+        'use strict';
+        // Collapseイベント
+        $('.panel-collapse').on({
+          // 折り畳み開く処理
+          'show.bs.collapse': function() {
+            $('a[href="#' + this.id + '"] span.glyphicon-chevron-down')
+              .removeClass('glyphicon-chevron-down')
+              .addClass('glyphicon-chevron-up');
+          },
+          // 折り畳み閉じる処理
+          'hide.bs.collapse': function() {
+            $('a[href="#' + this.id + '"] span.glyphicon-chevron-up')
+              .removeClass('glyphicon-chevron-up')
+              .addClass('glyphicon-chevron-down');
+          }
+        });
+        // ハッシュリンクキャンセル
+        $('a[href="#menuOne"], a[href="#menuTwo"]').on('click', function(event) {
+          event.preventDefault();
+        });
+      })(jQuery);
+
+      $(function() {
+        'use strict';
+        // B	爆撃機
+        // ONボタン押下
+        $('#performShowB').click(function() {
+          $('#Do17Z').collapse('show');
+          $('#Do17Zg').collapse('show');
+          $('#He111H2').collapse('show');
+          $('#He111H10').collapse('show');
+          $('#Ju88A1').collapse('show');
+          $('#Ju88A4').collapse('show');
+          $('#Ju188E').collapse('show');
+          $('#Ju188A').collapse('show');
+          $('#Ju88S').collapse('show');
+          $('#Ju188S').collapse('show');
+          $('#Do217E').collapse('show');
+          $('#Do217K').collapse('show');
+          $('#Do217M').collapse('show');
+          $('#He177A').collapse('show');
+          $('#Me264').collapse('show');
+          $('#Ju287').collapse('show');
+          $('#performShowB > div').removeClass('off-light-color');
+          $('#performShowB > div').addClass('on-light-color');
+          $('#performHideB > div').removeClass('on-light-color');
+          $('#performHideB > div').addClass('off-light-color');
+        });
+        // OFFボタン押下
+        $('#performHideB').click(function() {
+          $('#Do17Z').collapse('hide');
+          $('#Do17Zg').collapse('hide');
+          $('#He111H2').collapse('hide');
+          $('#He111H10').collapse('hide');
+          $('#Ju88A1').collapse('hide');
+          $('#Ju88A4').collapse('hide');
+          $('#Ju188E').collapse('hide');
+          $('#Ju188A').collapse('hide');
+          $('#Ju88S').collapse('hide');
+          $('#Ju188S').collapse('hide');
+          $('#Do217E').collapse('hide');
+          $('#Do217K').collapse('hide');
+          $('#Do217M').collapse('hide');
+          $('#He177A').collapse('hide');
+          $('#Me264').collapse('hide');
+          $('#Ju287').collapse('hide');
+          $('#performShowB > div').removeClass('on-light-color');
+          $('#performShowB > div').addClass('off-light-color');
+          $('#performHideB > div').removeClass('off-light-color');
+          $('#performHideB > div').addClass('on-light-color');
+        });
+        // BU	巡行ミサイル
+        // ONボタン押下
+        $('#performShowBU').click(function() {
+          $('#V1').collapse('show');
+          $('#performShowBU > div').removeClass('off-light-color');
+          $('#performShowBU > div').addClass('on-light-color');
+          $('#performHideBU > div').removeClass('on-light-color');
+          $('#performHideBU > div').addClass('off-light-color');
+        });
+        // OFFボタン押下
+        $('#performHideBU').click(function() {
+          $('#V1').collapse('hide');
+          $('#performShowBU > div').removeClass('on-light-color');
+          $('#performShowBU > div').addClass('off-light-color');
+          $('#performHideBU > div').removeClass('off-light-color');
+          $('#performHideBU > div').addClass('on-light-color');
+        });
+        // BR	戦略ミサイル
+        // ONボタン押下
+        $('#performShowBR').click(function() {
+          $('#V2').collapse('show');
+          $('#performShowBR > div').removeClass('off-light-color');
+          $('#performShowBR > div').addClass('on-light-color');
+          $('#performHideBR > div').removeClass('on-light-color');
+          $('#performHideBR > div').addClass('off-light-color');
+        });
+        // OFFボタン押下
+        $('#performHideBR').click(function() {
+          $('#V2').collapse('hide');
+          $('#performShowBR > div').removeClass('on-light-color');
+          $('#performShowBR > div').addClass('off-light-color');
+          $('#performHideBR > div').removeClass('off-light-color');
+          $('#performHideBR > div').addClass('on-light-color');
+        });
       });
-      // ハッシュリンクキャンセル
-      $('a[href="#menuOne"], a[href="#menuTwo"]').on('click', function(event) {
-        event.preventDefault();
-      });
-    })(jQuery);
+
     </script>
 
   </body>

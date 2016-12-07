@@ -186,7 +186,24 @@
 
           <!-- QP 牽引対戦車砲 -->
           <section id="QP">
-            <h3><span class="unit-type-cap">QP</span>牽引対戦車砲</h3>
+            <div class="weapon-tyoe-title-box">
+              <div class="weapon-tyoe-title">
+                <h3><span class="unit-type-cap">QP</span>牽引対戦車砲</h3>
+              </div>
+              <div class="perform-toggle-button">
+                <div class="perf-text">性能表</div>
+                <div id="performShowQP" class="on-text">
+                  ON
+                  <div class="on-text-light off-light-color">
+                  </div>
+                </div>
+                <div id="performHideQP" class="off-text">
+                  OFF
+                  <div class="off-text-light on-light-color">
+                  </div>
+                </div>
+              </div>
+            </div>
             <p>開発表&nbsp;枠数&nbsp;4</p>
 
             <div class="unit">
@@ -730,8 +747,26 @@
 
           <!-- QU 牽引カノン砲 -->
           <section id="QU">
-            <h3><span class="unit-type-cap">QU</span>牽引カノン砲</h3>
+            <div class="weapon-tyoe-title-box">
+              <div class="weapon-tyoe-title">
+                <h3><span class="unit-type-cap">QU</span>牽引カノン砲</h3>
+              </div>
+              <div class="perform-toggle-button">
+                <div class="perf-text">性能表</div>
+                <div id="performShowQU" class="on-text">
+                  ON
+                  <div class="on-text-light off-light-color">
+                  </div>
+                </div>
+                <div id="performHideQU" class="off-text">
+                  OFF
+                  <div class="off-text-light on-light-color">
+                  </div>
+                </div>
+              </div>
+            </div>
             <p>開発表&nbsp;枠数&nbsp;3</p>
+
             <div class="unit">
               <div class="unit-main level1">
                 <h4>Level&nbsp;1</h4>
@@ -1140,7 +1175,24 @@
 
           <!-- QN 牽引ロケット -->
           <section id="QN">
-            <h3><span class="unit-type-cap">QN</span>牽引ロケット</h3>
+            <div class="weapon-tyoe-title-box">
+              <div class="weapon-tyoe-title">
+                <h3><span class="unit-type-cap">QN</span>牽引ロケット</h3>
+              </div>
+              <div class="perform-toggle-button">
+                <div class="perf-text">性能表</div>
+                <div id="performShowQN" class="on-text">
+                  ON
+                  <div class="on-text-light off-light-color">
+                  </div>
+                </div>
+                <div id="performHideQN" class="off-text">
+                  OFF
+                  <div class="off-text-light on-light-color">
+                  </div>
+                </div>
+              </div>
+            </div>
             <p>開発表&nbsp;枠数&nbsp;2</p>
 
             <div class="unit">
@@ -1412,7 +1464,24 @@
 
           <!-- QR 牽引高射砲 -->
           <section id="QR">
-            <h3><span class="unit-type-cap">QR</span>牽引高射砲</h3>
+            <div class="weapon-tyoe-title-box">
+              <div class="weapon-tyoe-title">
+                <h3><span class="unit-type-cap">QR</span>牽引高射砲</h3>
+              </div>
+              <div class="perform-toggle-button">
+                <div class="perf-text">性能表</div>
+                <div id="performShowQR" class="on-text">
+                  ON
+                  <div class="on-text-light off-light-color">
+                  </div>
+                </div>
+                <div id="performHideQR" class="off-text">
+                  OFF
+                  <div class="off-text-light on-light-color">
+                  </div>
+                </div>
+              </div>
+            </div>
             <p>開発表&nbsp;枠数&nbsp;2</p>
 
             <div class="unit">
@@ -1698,28 +1767,114 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <script>
-    (function($) {
-      'use strict';
-      // Collapseイベント
-      $('.panel-collapse').on({
-        // 折り畳み開く処理
-        'show.bs.collapse': function() {
-          $('a[href="#' + this.id + '"] span.glyphicon-chevron-down')
-            .removeClass('glyphicon-chevron-down')
-            .addClass('glyphicon-chevron-up');
-        },
-        // 折り畳み閉じる処理
-        'hide.bs.collapse': function() {
-          $('a[href="#' + this.id + '"] span.glyphicon-chevron-up')
-            .removeClass('glyphicon-chevron-up')
-            .addClass('glyphicon-chevron-down');
-        }
+      (function($) {
+        'use strict';
+        // Collapseイベント
+        $('.panel-collapse').on({
+          // 折り畳み開く処理
+          'show.bs.collapse': function() {
+            $('a[href="#' + this.id + '"] span.glyphicon-chevron-down')
+              .removeClass('glyphicon-chevron-down')
+              .addClass('glyphicon-chevron-up');
+          },
+          // 折り畳み閉じる処理
+          'hide.bs.collapse': function() {
+            $('a[href="#' + this.id + '"] span.glyphicon-chevron-up')
+              .removeClass('glyphicon-chevron-up')
+              .addClass('glyphicon-chevron-down');
+          }
+        });
+        // ハッシュリンクキャンセル
+        $('a[href="#menuOne"], a[href="#menuTwo"]').on('click', function(event) {
+          event.preventDefault();
+        });
+      })(jQuery);
+      $(function() {
+        'use strict';
+        // QP	牽引対戦車砲
+        // ONボタン押下
+        $('#performShowQP').click(function() {
+          $('#37mmPak35').collapse('show');
+          $('#50mmPak38').collapse('show');
+          $('#75mmPak40').collapse('show');
+          $('#88mmPak43').collapse('show');
+          $('#performShowQP > div').removeClass('off-light-color');
+          $('#performShowQP > div').addClass('on-light-color');
+          $('#performHideQP > div').removeClass('on-light-color');
+          $('#performHideQP > div').addClass('off-light-color');
+        });
+        // OFFボタン押下
+        $('#performHideQP').click(function() {
+          $('#37mmPak35').collapse('hide');
+          $('#50mmPak38').collapse('hide');
+          $('#75mmPak40').collapse('hide');
+          $('#88mmPak43').collapse('hide');
+          $('#performShowQP > div').removeClass('on-light-color');
+          $('#performShowQP > div').addClass('off-light-color');
+          $('#performHideQP > div').removeClass('off-light-color');
+          $('#performHideQP > div').addClass('on-light-color');
+        });
+        // QU	牽引カノン砲
+        // ONボタン押下
+        $('#performShowQU').click(function() {
+          $('#105mm').collapse('show');
+          $('#150mm').collapse('show');
+          $('#173mm').collapse('show');
+          $('#performShowQU > div').removeClass('off-light-color');
+          $('#performShowQU > div').addClass('on-light-color');
+          $('#performHideQU > div').removeClass('on-light-color');
+          $('#performHideQU > div').addClass('off-light-color');
+        });
+        // OFFボタン押下
+        $('#performHideQU').click(function() {
+          $('#105mm').collapse('hide');
+          $('#150mm').collapse('hide');
+          $('#173mm').collapse('hide');
+          $('#performShowQU > div').removeClass('on-light-color');
+          $('#performShowQU > div').addClass('off-light-color');
+          $('#performHideQU > div').removeClass('off-light-color');
+          $('#performHideQU > div').addClass('on-light-color');
+        });
+        // QN	牽引ロケット
+        // ONボタン押下
+        $('#performShowQN').click(function() {
+          $('#150mmNW41').collapse('show');
+          $('#210mmNW42').collapse('show');
+          $('#performShowQN > div').removeClass('off-light-color');
+          $('#performShowQN > div').addClass('on-light-color');
+          $('#performHideQN > div').removeClass('on-light-color');
+          $('#performHideQN > div').addClass('off-light-color');
+        });
+        // OFFボタン押下
+        $('#performHideQN').click(function() {
+          $('#150mmNW41').collapse('hide');
+          $('#210mmNW42').collapse('hide');
+          $('#performShowQN > div').removeClass('on-light-color');
+          $('#performShowQN > div').addClass('off-light-color');
+          $('#performHideQN > div').removeClass('off-light-color');
+          $('#performHideQN > div').addClass('on-light-color');
+        });
+        // QR	牽引高射砲
+        // ONボタン押下
+        $('#performShowQR').click(function() {
+          $('#88mmFlk36').collapse('show');
+          $('#88mmFlk41').collapse('show');
+          $('#performShowQR > div').removeClass('off-light-color');
+          $('#performShowQR > div').addClass('on-light-color');
+          $('#performHideQR > div').removeClass('on-light-color');
+          $('#performHideQR > div').addClass('off-light-color');
+        });
+        // OFFボタン押下
+        $('#performHideQR').click(function() {
+          $('#88mmFlk36').collapse('hide');
+          $('#88mmFlk41').collapse('hide');
+          $('#performShowQR > div').removeClass('on-light-color');
+          $('#performShowQR > div').addClass('off-light-color');
+          $('#performHideQR > div').removeClass('off-light-color');
+          $('#performHideQR > div').addClass('on-light-color');
+        });
       });
-      // ハッシュリンクキャンセル
-      $('a[href="#menuOne"], a[href="#menuTwo"]').on('click', function(event) {
-        event.preventDefault();
-      });
-    })(jQuery);
+
     </script>
 
   </body>

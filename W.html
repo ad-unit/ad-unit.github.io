@@ -186,7 +186,24 @@
 
             <!-- W  水上艦 -->
             <section id="W">
-              <h3><span class="unit-type-cap">W</span>水上艦</h3>
+              <div class="weapon-tyoe-title-box">
+                <div class="weapon-tyoe-title">
+                  <h3><span class="unit-type-cap">W</span>水上艦</h3>
+                </div>
+                <div class="perform-toggle-button">
+                  <div class="perf-text">性能表</div>
+                  <div id="performShowW" class="on-text">
+                    ON
+                    <div class="on-text-light off-light-color">
+                    </div>
+                  </div>
+                  <div id="performHideW" class="off-text">
+                    OFF
+                    <div class="off-text-light on-light-color">
+                    </div>
+                  </div>
+                </div>
+              </div>
               <p>開発表&nbsp;枠数&nbsp;4</p>
 
               <div class="unit">
@@ -858,7 +875,24 @@
 
             <!-- WC 空母 -->
             <section id="WC">
-              <h3><span class="unit-type-cap">WC</span>空母</h3>
+              <div class="weapon-tyoe-title-box">
+                <div class="weapon-tyoe-title">
+                  <h3><span class="unit-type-cap">WC</span>空母</h3>
+                </div>
+                <div class="perform-toggle-button">
+                  <div class="perf-text">性能表</div>
+                  <div id="performShowWC" class="on-text">
+                    ON
+                    <div class="on-text-light off-light-color">
+                    </div>
+                  </div>
+                  <div id="performHideWC" class="off-text">
+                    OFF
+                    <div class="off-text-light on-light-color">
+                    </div>
+                  </div>
+                </div>
+              </div>
               <p>開発表&nbsp;枠数&nbsp;1</p>
 
               <div class="unit">
@@ -1006,7 +1040,24 @@
 
             <!-- WT 揚陸艦 -->
             <section id="WT">
-              <h3><span class="unit-type-cap">WT</span>揚陸艦</h3>
+              <div class="weapon-tyoe-title-box">
+                <div class="weapon-tyoe-title">
+                  <h3><span class="unit-type-cap">WT</span>揚陸艦</h3>
+                </div>
+                <div class="perform-toggle-button">
+                  <div class="perf-text">性能表</div>
+                  <div id="performShowWT" class="on-text">
+                    ON
+                    <div class="on-text-light off-light-color">
+                    </div>
+                  </div>
+                  <div id="performHideWT" class="off-text">
+                    OFF
+                    <div class="off-text-light on-light-color">
+                    </div>
+                  </div>
+                </div>
+              </div>
               <p>開発表&nbsp;枠数&nbsp;1</p>
 
               <div class="unit">
@@ -1154,7 +1205,24 @@
 
             <!-- WH 補給艦 -->
             <section id="WH">
-              <h3><span class="unit-type-cap">WH</span>補給艦</h3>
+              <div class="weapon-tyoe-title-box">
+                <div class="weapon-tyoe-title">
+                  <h3><span class="unit-type-cap">WH</span>補給艦</h3>
+                </div>
+                <div class="perform-toggle-button">
+                  <div class="perf-text">性能表</div>
+                  <div id="performShowWH" class="on-text">
+                    ON
+                    <div class="on-text-light off-light-color">
+                    </div>
+                  </div>
+                  <div id="performHideWH" class="off-text">
+                    OFF
+                    <div class="off-text-light on-light-color">
+                    </div>
+                  </div>
+                </div>
+              </div>
               <p>開発表&nbsp;枠数&nbsp;1</p>
 
               <div class="unit">
@@ -1303,28 +1371,109 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <script>
-    (function($) {
-      'use strict';
-      // Collapseイベント
-      $('.panel-collapse').on({
-        // 折り畳み開く処理
-        'show.bs.collapse': function() {
-          $('a[href="#' + this.id + '"] span.glyphicon-chevron-down')
-            .removeClass('glyphicon-chevron-down')
-            .addClass('glyphicon-chevron-up');
-        },
-        // 折り畳み閉じる処理
-        'hide.bs.collapse': function() {
-          $('a[href="#' + this.id + '"] span.glyphicon-chevron-up')
-            .removeClass('glyphicon-chevron-up')
-            .addClass('glyphicon-chevron-down');
-        }
+      (function($) {
+        'use strict';
+        // Collapseイベント
+        $('.panel-collapse').on({
+          // 折り畳み開く処理
+          'show.bs.collapse': function() {
+            $('a[href="#' + this.id + '"] span.glyphicon-chevron-down')
+              .removeClass('glyphicon-chevron-down')
+              .addClass('glyphicon-chevron-up');
+          },
+          // 折り畳み閉じる処理
+          'hide.bs.collapse': function() {
+            $('a[href="#' + this.id + '"] span.glyphicon-chevron-up')
+              .removeClass('glyphicon-chevron-up')
+              .addClass('glyphicon-chevron-down');
+          }
+        });
+        // ハッシュリンクキャンセル
+        $('a[href="#menuOne"], a[href="#menuTwo"]').on('click', function(event) {
+          event.preventDefault();
+        });
+      })(jQuery);
+
+      $(function() {
+        'use strict';
+        // W	水上艦
+        // ONボタン押下
+        $('#performShowW').click(function() {
+          $('#Destroyer').collapse('show');
+          $('#LightCruiser').collapse('show');
+          $('#Cruiser').collapse('show');
+          $('#BattleCruiser').collapse('show');
+          $('#Battleship').collapse('show');
+          $('#performShowW > div').removeClass('off-light-color');
+          $('#performShowW > div').addClass('on-light-color');
+          $('#performHideW > div').removeClass('on-light-color');
+          $('#performHideW > div').addClass('off-light-color');
+        });
+        // OFFボタン押下
+        $('#performHideW').click(function() {
+          $('#Destroyer').collapse('hide');
+          $('#LightCruiser').collapse('hide');
+          $('#Cruiser').collapse('hide');
+          $('#BattleCruiser').collapse('hide');
+          $('#Battleship').collapse('hide');
+          $('#performShowW > div').removeClass('on-light-color');
+          $('#performShowW > div').addClass('off-light-color');
+          $('#performHideW > div').removeClass('off-light-color');
+          $('#performHideW > div').addClass('on-light-color');
+        });
+        // WC	空母
+        // ONボタン押下
+        $('#performShowWC').click(function() {
+          $('#AircraftCarrier').collapse('show');
+          $('#performShowWC > div').removeClass('off-light-color');
+          $('#performShowWC > div').addClass('on-light-color');
+          $('#performHideWC > div').removeClass('on-light-color');
+          $('#performHideWC > div').addClass('off-light-color');
+        });
+        // OFFボタン押下
+        $('#performHideWC').click(function() {
+          $('#AircraftCarrier').collapse('hide');
+          $('#performShowWC > div').removeClass('on-light-color');
+          $('#performShowWC > div').addClass('off-light-color');
+          $('#performHideWC > div').removeClass('off-light-color');
+          $('#performHideWC > div').addClass('on-light-color');
+        });
+        // WT	揚陸艦
+        // ONボタン押下
+        $('#performShowWT').click(function() {
+          $('#LandingShip').collapse('show');
+          $('#performShowWT > div').removeClass('off-light-color');
+          $('#performShowWT > div').addClass('on-light-color');
+          $('#performHideWT > div').removeClass('on-light-color');
+          $('#performHideWT > div').addClass('off-light-color');
+        });
+        // OFFボタン押下
+        $('#performHideWT').click(function() {
+          $('#LandingShip').collapse('hide');
+          $('#performShowWT > div').removeClass('on-light-color');
+          $('#performShowWT > div').addClass('off-light-color');
+          $('#performHideWT > div').removeClass('off-light-color');
+          $('#performHideWT > div').addClass('on-light-color');
+        });
+        // WH	補給艦
+        // ONボタン押下
+        $('#performShowWH').click(function() {
+          $('#SupplyShip').collapse('show');
+          $('#performShowWH > div').removeClass('off-light-color');
+          $('#performShowWH > div').addClass('on-light-color');
+          $('#performHideWH > div').removeClass('on-light-color');
+          $('#performHideWH > div').addClass('off-light-color');
+        });
+        // OFFボタン押下
+        $('#performHideWH').click(function() {
+          $('#SupplyShip').collapse('hide');
+          $('#performShowWH > div').removeClass('on-light-color');
+          $('#performShowWH > div').addClass('off-light-color');
+          $('#performHideWH > div').removeClass('off-light-color');
+          $('#performHideWH > div').addClass('on-light-color');
+        });
       });
-      // ハッシュリンクキャンセル
-      $('a[href="#menuOne"], a[href="#menuTwo"]').on('click', function(event) {
-        event.preventDefault();
-      });
-    })(jQuery);
+
     </script>
 
   </body>
