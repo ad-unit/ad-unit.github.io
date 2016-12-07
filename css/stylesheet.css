@@ -163,8 +163,8 @@ p.right {
 
 /* ユニット名 */
 .unit-name {
-  font-family: 'Roboto Mono', Consolas, 'Courier New', Courier, Monaco, monospace;
-  /*font-family: 'Roboto Mono', Avenir, "Open Sans" , "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" , "Meiryo UI" , "メイリオ" , Meiryo , "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;*/
+  font-family: 'Podkova', Avenir, "Open Sans" , "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" , "Meiryo UI" , "メイリオ" , Meiryo , "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;
+  font-size: 110%;
   width: 200px;
   text-align: left;
   float: left;
