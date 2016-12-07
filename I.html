@@ -1406,68 +1406,7 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-    <script>
-      (function($) {
-        'use strict';
-        // Collapseイベント
-        $('.panel-collapse').on({
-          // 折り畳み開く処理
-          'show.bs.collapse': function() {
-            $('a[href="#' + this.id + '"] span.glyphicon-chevron-down')
-              .removeClass('glyphicon-chevron-down')
-              .addClass('glyphicon-chevron-up');
-          },
-          // 折り畳み閉じる処理
-          'hide.bs.collapse': function() {
-            $('a[href="#' + this.id + '"] span.glyphicon-chevron-up')
-              .removeClass('glyphicon-chevron-up')
-              .addClass('glyphicon-chevron-down');
-          }
-        });
-        // ハッシュリンクキャンセル
-        $('a[href="#menuOne"], a[href="#menuTwo"]').on('click', function(event) {
-          event.preventDefault();
-        });
-      })(jQuery);
-
-      $(function() {
-        'use strict';
-        //
-        // ONボタン押下
-        $('#performShowI').click(function() {
-          $('#Grenadier39').collapse('show');
-          $('#MobilizedSoldier').collapse('show');
-          $('#EliteSoldiers39').collapse('show');
-          $('#Grenadier43').collapse('show');
-          $('#BattleSoldier').collapse('show');
-          $('#EliteSoldiers43').collapse('show');
-          $('#Guard39').collapse('show');
-          $('#Guard43').collapse('show');
-          $('#DescentHunter').collapse('show');
-          $('#performShowI > div').removeClass('off-light-color');
-          $('#performShowI > div').addClass('on-light-color');
-          $('#performHideI > div').removeClass('on-light-color');
-          $('#performHideI > div').addClass('off-light-color');
-        });
-        // OFFボタン押下
-        $('#performHideI').click(function() {
-          $('#Grenadier39').collapse('hide');
-          $('#MobilizedSoldier').collapse('hide');
-          $('#EliteSoldiers39').collapse('hide');
-          $('#Grenadier43').collapse('hide');
-          $('#BattleSoldier').collapse('hide');
-          $('#EliteSoldiers43').collapse('hide');
-          $('#Guard39').collapse('hide');
-          $('#Guard43').collapse('hide');
-          $('#DescentHunter').collapse('hide');
-          $('#performShowI > div').removeClass('on-light-color');
-          $('#performShowI > div').addClass('off-light-color');
-          $('#performHideI > div').removeClass('off-light-color');
-          $('#performHideI > div').addClass('on-light-color');
-        });
-      });
-
-    </script>
+    <script src="./js/main.js"></script>
 
   </body>
 </html>

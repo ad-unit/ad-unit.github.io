@@ -1899,6 +1899,8 @@
             </div>
 
           </section>
+          <a href="#">上へ</a>
+
           <hr>
 
 
@@ -3242,7 +3244,6 @@
                 </div>
               </div>
             </div>
-
           </section>
           <hr>
 
@@ -4096,147 +4097,6 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-    <script>
-      (function($) {
-        'use strict';
-        // Collapseイベント
-        $('.panel-collapse').on({
-          // 折り畳み開く処理
-          'show.bs.collapse': function() {
-            $('a[href="#' + this.id + '"] span.glyphicon-chevron-down')
-              .removeClass('glyphicon-chevron-down')
-              .addClass('glyphicon-chevron-up');
-          },
-          // 折り畳み閉じる処理
-          'hide.bs.collapse': function() {
-            $('a[href="#' + this.id + '"] span.glyphicon-chevron-up')
-              .removeClass('glyphicon-chevron-up')
-              .addClass('glyphicon-chevron-down');
-          }
-        });
-        // ハッシュリンクキャンセル
-        $('a[href="#menuOne"], a[href="#menuTwo"]').on('click', function(event) {
-          event.preventDefault();
-        });
-      })(jQuery);
-
-      $(function() {
-        'use strict';
-        // F	戦闘機
-        // ONボタン押下
-        $('#performShowF').click(function() {
-          $('#Bf109E').collapse('show');
-          $('#Bf109F').collapse('show');
-          $('#Bf109G').collapse('show');
-          $('#Bf109K').collapse('show');
-          $('#Fw190A').collapse('show');
-          $('#Fw190D9').collapse('show');
-          $('#Ta152H').collapse('show');
-          $('#M262A1').collapse('show');
-          $('#Do335').collapse('show');
-          $('#He162').collapse('show');
-          $('#MeP1101').collapse('show');
-          $('#performShowF > div').removeClass('off-light-color');
-          $('#performShowF > div').addClass('on-light-color');
-          $('#performHideF > div').removeClass('on-light-color');
-          $('#performHideF > div').addClass('off-light-color');
-        });
-        // OFFボタン押下
-        $('#performHideF').click(function() {
-          $('#Bf109E').collapse('hide');
-          $('#Bf109F').collapse('hide');
-          $('#Bf109G').collapse('hide');
-          $('#Bf109K').collapse('hide');
-          $('#Fw190A').collapse('hide');
-          $('#Fw190D9').collapse('hide');
-          $('#Ta152H').collapse('hide');
-          $('#M262A1').collapse('hide');
-          $('#Do335').collapse('hide');
-          $('#He162').collapse('hide');
-          $('#MeP1101').collapse('hide');
-          $('#performShowF > div').removeClass('on-light-color');
-          $('#performShowF > div').addClass('off-light-color');
-          $('#performHideF > div').removeClass('off-light-color');
-          $('#performHideF > div').addClass('on-light-color');
-        });
-        // FB	戦闘爆撃機
-        // ONボタン押下
-        $('#performShowFB').click(function() {
-          $('#Bf110C').collapse('show');
-          $('#Bf110D').collapse('show');
-          $('#Bf110E').collapse('show');
-          $('#Bf110G').collapse('show');
-          $('#Me210C').collapse('show');
-          $('#Me410A').collapse('show');
-          $('#Me410B').collapse('show');
-          $('#Fw190G').collapse('show');
-          $('#Fw190F').collapse('show');
-          $('#Me262A2').collapse('show');
-          $('#performShowFB > div').removeClass('off-light-color');
-          $('#performShowFB > div').addClass('on-light-color');
-          $('#performHideFB > div').removeClass('on-light-color');
-          $('#performHideFB > div').addClass('off-light-color');
-        });
-        // OFFボタン押下
-        $('#performHideFB').click(function() {
-          $('#Bf110C').collapse('hide');
-          $('#Bf110D').collapse('hide');
-          $('#Bf110E').collapse('hide');
-          $('#Bf110G').collapse('hide');
-          $('#Me210C').collapse('hide');
-          $('#Me410A').collapse('hide');
-          $('#Me410B').collapse('hide');
-          $('#Fw190G').collapse('hide');
-          $('#Fw190F').collapse('hide');
-          $('#Me262A2').collapse('hide');
-          $('#performShowFB > div').removeClass('on-light-color');
-          $('#performShowFB > div').addClass('off-light-color');
-          $('#performHideFB > div').removeClass('off-light-color');
-          $('#performHideFB > div').addClass('on-light-color');
-        });
-        // FD	局地戦闘機
-        // ONボタン押下
-        $('#performShowFD').click(function() {
-          $('#Me163B').collapse('show');
-          $('#Me163C').collapse('show');
-          $('#Ba349').collapse('show');
-          $('#Me263').collapse('show');
-          $('#performShowFD > div').removeClass('off-light-color');
-          $('#performShowFD > div').addClass('on-light-color');
-          $('#performHideFD > div').removeClass('on-light-color');
-          $('#performHideFD > div').addClass('off-light-color');
-        });
-        // OFFボタン押下
-        $('#performHideFD').click(function() {
-          $('#Me163B').collapse('hide');
-          $('#Me163C').collapse('hide');
-          $('#Ba349').collapse('hide');
-          $('#Me263').collapse('hide');
-          $('#performShowFD > div').removeClass('on-light-color');
-          $('#performShowFD > div').addClass('off-light-color');
-          $('#performHideFD > div').removeClass('off-light-color');
-          $('#performHideFD > div').addClass('on-light-color');
-        });
-        // FC	艦上戦闘機
-        // ONボタン押下
-        $('#performShowFC').click(function() {
-          $('#Bf109T').collapse('show');
-          $('#performShowFC > div').removeClass('off-light-color');
-          $('#performShowFC > div').addClass('on-light-color');
-          $('#performHideFC > div').removeClass('on-light-color');
-          $('#performHideFC > div').addClass('off-light-color');
-        });
-        // OFFボタン押下
-        $('#performHideFC').click(function() {
-          $('#Bf109T').collapse('hide');
-          $('#performShowFC > div').removeClass('on-light-color');
-          $('#performShowFC > div').addClass('off-light-color');
-          $('#performHideFC > div').removeClass('off-light-color');
-          $('#performHideFC > div').addClass('on-light-color');
-        });
-
-      });
-    </script>
-
+    <script src="./js/main.js"></script>
   </body>
 </html>

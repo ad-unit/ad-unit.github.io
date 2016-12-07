@@ -875,60 +875,7 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-    <script>
-      (function($) {
-        'use strict';
-        // Collapseイベント
-        $('.panel-collapse').on({
-          // 折り畳み開く処理
-          'show.bs.collapse': function() {
-            $('a[href="#' + this.id + '"] span.glyphicon-chevron-down')
-              .removeClass('glyphicon-chevron-down')
-              .addClass('glyphicon-chevron-up');
-          },
-          // 折り畳み閉じる処理
-          'hide.bs.collapse': function() {
-            $('a[href="#' + this.id + '"] span.glyphicon-chevron-up')
-              .removeClass('glyphicon-chevron-up')
-              .addClass('glyphicon-chevron-down');
-          }
-        });
-        // ハッシュリンクキャンセル
-        $('a[href="#menuOne"], a[href="#menuTwo"]').on('click', function(event) {
-          event.preventDefault();
-        });
-      })(jQuery);
-
-      $(function() {
-        'use strict';
-        // G	トーチカ
-        // ONボタン押下
-        $('#performShowG').click(function() {
-          $('#Turret').collapse('show');
-          $('#Torchka').collapse('show');
-          $('#CoastalBattery').collapse('show');
-          $('#Radar').collapse('show');
-          $('#AtlanticWall').collapse('show');
-          $('#performShowG > div').removeClass('off-light-color');
-          $('#performShowG > div').addClass('on-light-color');
-          $('#performHideG > div').removeClass('on-light-color');
-          $('#performHideG > div').addClass('off-light-color');
-        });
-        // OFFボタン押下
-        $('#performHideG').click(function() {
-          $('#Turret').collapse('hide');
-          $('#Torchka').collapse('hide');
-          $('#CoastalBattery').collapse('hide');
-          $('#Radar').collapse('hide');
-          $('#AtlanticWall').collapse('hide');
-          $('#performShowG > div').removeClass('on-light-color');
-          $('#performShowG > div').addClass('off-light-color');
-          $('#performHideG > div').removeClass('off-light-color');
-          $('#performHideG > div').addClass('on-light-color');
-        });
-      });
-
-    </script>
+    <script src="./js/main.js"></script>
 
   </body>
 </html>
