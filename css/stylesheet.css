@@ -363,3 +363,6 @@ p.right {
   text-decoration: none;
   opacity: 0.4;
 }
+.scenario-bgcolor {
+  background-color: #4A4D4A;
+}
