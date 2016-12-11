@@ -367,3 +367,14 @@ p.right {
   background-color: #4A4D4A;
   color: #c6ccc6;
 }
+.land-table {
+  background-color: #4A4D4A;
+}
+.move-type {
+  width: 44px;
+  background-color: #4A4D4A;
+}
+.move-cost {
+  width: 14px;
+  background-color: #4A4D4A;
+}
